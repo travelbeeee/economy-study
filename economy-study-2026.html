@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 경제 스터디 — Global Economy</title>
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#fff; --text:#191f28; --muted:#8b95a1;
+    --blue:#3182f6; --blue2:#e8f3ff; --line:#eef0f3;
+    --green:#20c997; --red:#f04452; --navy:#263043;
+    --shadow:0 8px 28px rgba(25,31,40,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .top{position:sticky;top:0;z-index:20;background:rgba(244,246,248,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,0,0,.04)}
+  .nav{max-width:1120px;margin:auto;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+  .brand{font-size:20px;font-weight:800;letter-spacing:-.6px}
+  .navlinks{display:flex;gap:8px}
+  .navlinks a{padding:8px 13px;border-radius:10px;color:#6b7684;font-size:14px;font-weight:650}
+  .navlinks a:hover{background:#fff;color:var(--text)}
+  .hero{max-width:1120px;margin:0 auto;padding:78px 24px 48px}
+  .eyebrow{display:inline-flex;padding:7px 11px;background:var(--blue2);color:var(--blue);border-radius:999px;font-size:13px;font-weight:750}
+  h1{font-size:52px;line-height:1.12;letter-spacing:-2.7px;margin:18px 0 16px}
+  .hero p{font-size:19px;color:#66717e;max-width:720px;margin:0}
+  .hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .pill{background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:10px;font-size:13px;color:#66717e}
+  main{max-width:1120px;margin:auto;padding:0 24px 90px}
+  .section{margin-top:30px}
+  .section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:16px}
+  .section-title h2{font-size:28px;letter-spacing:-1.1px;margin:0}
+  .section-title p{margin:0;color:var(--muted);font-size:14px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{background:var(--card);border-radius:22px;padding:26px;box-shadow:var(--shadow)}
+  .topic{min-height:275px;position:relative;overflow:hidden}
+  .topic .num{font-size:13px;font-weight:800;color:var(--blue)}
+  .topic h3{font-size:25px;line-height:1.25;letter-spacing:-1px;margin:10px 0 12px}
+  .topic p{color:#66717e;font-size:14px;margin:0 0 18px}
+  .topic .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .tag{background:#f4f6f8;border-radius:8px;padding:5px 8px;font-size:12px;color:#59636f}
+  .topic:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-55px;bottom:-55px;background:var(--blue2)}
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:center}
+  .flow-item{background:#fff;border-radius:16px;padding:16px 12px;text-align:center;font-weight:750;font-size:14px;box-shadow:var(--shadow)}
+  .arrow{text-align:center;color:#aab2bb;font-size:20px}
+  .question{background:var(--navy);color:#fff;border-radius:24px;padding:34px}
+  .question .small{color:#aeb8c5;font-size:13px;font-weight:700}
+  .question h2{font-size:32px;line-height:1.3;letter-spacing:-1.4px;margin:10px 0}
+  .question p{color:#c8d0d9;margin:0}
+  .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .metric{background:#fff;border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+  .metric .label{font-size:12px;color:var(--muted);font-weight:700}
+  .metric .value{font-size:28px;font-weight:800;letter-spacing:-1px;margin:4px 0}
+  .metric .desc{font-size:12px;color:#76808c}
+  .source-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .source{background:#fff;border-radius:16px;padding:17px 19px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow)}
+  .source .name{font-weight:750;font-size:14px}
+  .source .type{font-size:12px;color:var(--muted);margin-top:2px}
+  .source .go{color:var(--blue);font-weight:800;font-size:13px}
+  .schedule{display:grid;grid-template-columns:120px 1fr;gap:12px}
+  .week{background:#fff;border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+  .week strong{display:block;color:var(--blue);font-size:13px;margin-bottom:4px}
+  .week h4{margin:0 0 5px;font-size:17px}
+  .week p{margin:0;color:#737d88;font-size:13px}
+  footer{max-width:1120px;margin:auto;padding:30px 24px 60px;color:#9aa3ad;font-size:12px}
+  @media(max-width:800px){
+    h1{font-size:40px}.grid3,.metric-grid{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}
+    .source-grid{grid-template-columns:1fr}.navlinks{display:none}
+  }
+  @media(max-width:520px){
+    .grid3,.metric-grid{grid-template-columns:1fr}.hero{padding-top:50px}.card{padding:22px}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <nav class="nav">
+    <div class="brand">ECONOMY STUDY</div>
+    <div class="navlinks">
+      <a href="#topics">Topics</a><a href="#data">Data</a><a href="#sources">Sources</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">2 WEEKS · AUG 2026</span>
+  <h1>2026 하반기 경제,<br>지금 무엇을 봐야 할까?</h1>
+  <p>미국의 금리, 중국의 구조전환, 한국의 반도체·환율·부동산을 하나의 흐름으로 연결해 본다.</p>
+  <div class="hero-meta">
+    <span class="pill">🇺🇸 미국 · Fed & Rate</span>
+    <span class="pill">🇨🇳 중국 · Structure Change</span>
+    <span class="pill">🇰🇷 한국 · Semiconductor</span>
+  </div>
+</section>
+
+<main>
+  <section id="topics" class="section">
+    <div class="section-title"><h2>이번 스터디의 3가지 질문</h2><p>News가 아니라 경제 메커니즘을 이해하기</p></div>
+    <div class="grid3">
+      <article class="card topic">
+        <div class="num">01 · USA</div>
+        <h3>Fed는 금리를<br>내릴 수 있을까?</h3>
+        <p>인플레이션은 아직 목표보다 높고, 성장·고용의 방향은 엇갈린다. 2026년 하반기 통화정책의 핵심 충돌을 이해한다.</p>
+        <div class="tags"><span class="tag">CPI / PCE</span><span class="tag">고용</span><span class="tag">Fed</span><span class="tag">국채</span><span class="tag">달러</span></div>
+      </article>
+      <article class="card topic">
+        <div class="num">02 · CHINA</div>
+        <h3>중국은 부동산 침체를<br>극복할 수 있을까?</h3>
+        <p>부동산 중심 성장모델에서 AI·반도체·첨단 제조업 중심으로 전환하는 중국의 성공 가능성과 리스크를 본다.</p>
+        <div class="tags"><span class="tag">부동산</span><span class="tag">디플레이션</span><span class="tag">AI</span><span class="tag">제조업</span><span class="tag">미중경쟁</span></div>
+      </article>
+      <article class="card topic">
+        <div class="num">03 · KOREA</div>
+        <h3>반도체 호황은<br>한국을 살리고 있는가?</h3>
+        <p>수출·반도체 호황과 원화·가계부채·주택시장이라는 금융안정 이슈가 동시에 나타나는 이유를 연결한다.</p>
+        <div class="tags"><span class="tag">반도체</span><span class="tag">수출</span><span class="tag">원/달러</span><span class="tag">기준금리</span><span class="tag">부동산</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><h2>하나의 흐름으로 보기</h2><p>Global → Korea</p></div>
+    <div class="card">
+      <div class="flow">
+        <div class="flow-item">🇺🇸<br>Fed 금리</div><div class="arrow">→</div>
+        <div class="flow-item">💵<br>달러 · 글로벌 유동성</div><div class="arrow">→</div>
+        <div class="flow-item">🌏<br>중국 · 한국</div>
+      </div>
+      <div style="height:12px"></div>
+      <div class="flow">
+        <div class="flow-item">AI 투자</div><div class="arrow">→</div>
+        <div class="flow-item">반도체 수요</div><div class="arrow">→</div>
+        <div class="flow-item">🇰🇷 수출 · GDP</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="data" class="section">
+    <div class="section-title"><h2>현재 확인할 핵심 데이터</h2><p>2026년 7월 기준 공식 자료</p></div>
+    <div class="metric-grid">
+      <div class="metric"><div class="label">US FED FUNDS TARGET</div><div class="value">3.50–3.75%</div><div class="desc">2026.07.29 · FOMC 동결</div></div>
+      <div class="metric"><div class="label">BOK BASE RATE</div><div class="value">2.75%</div><div class="desc">2026.07.16 · 25bp 인상</div></div>
+      <div class="metric"><div class="label">KOREA Q2 REAL GDP</div><div class="value">+0.6%</div><div class="desc">전기 대비 속보치</div></div>
+      <div class="metric"><div class="label">KOREA Q2 GDP</div><div class="value">+3.7%</div><div class="desc">전년 동기 대비 속보치</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="question">
+      <div class="small">FINAL QUESTION</div>
+      <h2>2026년 하반기 글로벌 경제의<br>가장 큰 리스크는 무엇인가?</h2>
+      <p>① 미국 인플레이션 재상승 · ② 중국 경기 장기침체 · ③ 한국 자산시장/가계부채</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title"><h2>2주 스터디 진행안</h2><p>발표 → 토론 → 투자 시사점</p></div>
+    <div class="schedule">
+      <div class="week"><strong>WEEK 1</strong><h4>미국 · 중국</h4><p>Fed / 인플레이션 / 고용<br>중국 부동산 / 제조업 / AI</p></div>
+      <div class="week"><strong>WEEK 2</strong><h4>한국 · 종합 토론</h4><p>반도체 / 환율 / 금리 / 부동산<br>3개 리스크의 시나리오 비교</p></div>
+    </div>
+  </section>
+
+  <section id="sources" class="section">
+    <div class="section-title"><h2>근거 자료</h2><p>1차 자료 우선</p></div>
+    <div class="source-grid">
+      <a class="source" href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" target="_blank"><div><div class="name">Federal Reserve · 2026.07 FOMC Statement</div><div class="type">미국 기준금리 · 통화정책</div></div><div class="go">↗</div></a>
+      <a class="source" href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank"><div><div class="name">Federal Reserve · FOMC Calendar</div><div class="type">향후 FOMC 일정</div></div><div class="go">↗</div></a>
+      <a class="source" href="https://www.bok.or.kr/portal/bbs/P0000559/view.do?depth=200690&menuNo=200690&nttId=11062942&programType=newsData&relate=Y" target="_blank"><div><div class="name">한국은행 · 2026.07 통화정책방향</div><div class="type">기준금리 2.75% · 성장 · 물가 · 금융안정</div></div><div class="go">↗</div></a>
+      <a class="source" href="https://www.bok.or.kr/portal/main/main.do?menuNo=200227" target="_blank"><div><div class="name">한국은행 · 경제통계 / 주요 이슈</div><div class="type">GDP · 반도체 · 경상수지 등</div></div><div class="go">↗</div></a>
+      <a class="source" href="https://www.imf.org/en/publications/weo/issues/2026/07/08/world-economic-outlook-update-july-2026" target="_blank"><div><div class="name">IMF · World Economic Outlook Update</div><div class="type">세계경제 전망 · 글로벌 리스크</div></div><div class="go">↗</div></a>
+      <a class="source" href="https://www.stats.gov.cn/english/" target="_blank"><div><div class="name">China NBS · National Bureau of Statistics</div><div class="type">중국 GDP · PMI · 산업생산 등</div></div><div class="go">↗</div></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  2026 ECONOMY STUDY · Prepared for personal study · Data should be checked against the latest official release before presentation.
+</footer>
+</body>
+</html>
