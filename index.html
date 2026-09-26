@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경제 뉴스와 기업 분석을 차곡차곡 정리하는 개인 경제 공부 아카이브입니다.">
+  <title>경제 공부 아카이브</title>
+  <style>
+    :root{color-scheme:light;--ink:#17211d;--muted:#68736d;--paper:#f5f6f1;--card:#fff;--line:#e6e9e1;--green:#1c7657;--mint:#e6f2eb;--gold:#e4b45d}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 44px));margin:auto}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-size:15px;font-weight:850;letter-spacing:.12em}.brand span{color:var(--green)}.toplink{font-size:13px;color:var(--muted)}
+    .hero{padding:94px 0 74px;max-width:800px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.eyebrow:before{content:"";width:22px;height:2px;background:var(--gold)}h1{font-size:clamp(42px,7vw,76px);line-height:1.12;letter-spacing:-.065em;margin:22px 0}.hero p{font-size:18px;color:var(--muted);max-width:610px;margin:0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;margin:0 0 18px}.section-head h2{margin:0;font-size:21px;letter-spacing:-.04em}.section-head p{margin:0;font-size:13px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{position:relative;display:flex;flex-direction:column;min-height:310px;padding:30px;background:var(--card);border:1px solid var(--line);border-radius:18px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.card:hover{transform:translateY(-3px);border-color:#b8d0c1;box-shadow:0 16px 40px #25372c0d}.icon{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--mint);color:var(--green);font-size:21px}.card:nth-child(2) .icon{background:#f6efdf;color:#98722e}.number{position:absolute;right:28px;top:30px;color:#a1aaa3;font-size:12px;font-weight:800;letter-spacing:.12em}.card h3{font-size:29px;letter-spacing:-.05em;margin:25px 0 8px}.card p{max-width:390px;margin:0;color:var(--muted);font-size:15px}.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:28px;color:var(--green);font-size:13px;font-weight:800}.card:nth-child(2) .card-foot{color:#98722e}.arrow{font-size:18px}.note{margin:18px 0 0;color:#818a83;font-size:12px}.about{display:grid;grid-template-columns:1fr 2fr;gap:30px;padding:42px 0 78px;margin-top:68px;border-top:1px solid var(--line)}.about h2{font-size:14px;letter-spacing:.08em;margin:0}.about p{margin:0;color:var(--muted);font-size:14px;max-width:620px}footer{padding:20px 0 34px;border-top:1px solid var(--line);color:#8b948d;font-size:12px;display:flex;justify-content:space-between}
+    @media(max-width:650px){.wrap{width:min(100% - 32px,1080px)}.topbar{height:64px}.hero{padding:70px 0 54px}.hero p{font-size:16px}.grid{grid-template-columns:1fr}.card{min-height:270px;padding:24px}.number{right:24px;top:24px}.about{grid-template-columns:1fr;gap:12px;margin-top:52px;padding:30px 0 52px}.section-head p{max-width:140px;text-align:right}footer{gap:10px;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="./" aria-label="경제 공부 홈">ECONOMY <span>STUDY</span></a>
+    <a class="toplink" href="https://github.com/travelbeeee/economy-study">GitHub 저장소 ↗</a>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">A personal learning archive</div>
+      <h1>경제를 읽고,<br>생각을 기록합니다.</h1>
+      <p>경제 뉴스의 흐름을 살펴보고 기업의 사업과 숫자를 분석하며, 배운 내용을 이해하기 쉬운 페이지로 정리하는 개인 공부 아카이브입니다.</p>
+    </section>
+    <section aria-labelledby="sections-title">
+      <div class="section-head"><h2 id="sections-title">공부 노트 둘러보기</h2><p>주제별로 정리한 기록</p></div>
+      <div class="grid">
+        <a class="card" href="./news/" aria-label="경제 뉴스 정리 페이지로 이동">
+          <span class="icon" aria-hidden="true">↗</span><span class="number">01 / NEWS</span>
+          <h3>경제 뉴스</h3><p>주요 경제 뉴스와 지표를 살펴보고, 무엇이 일어났는지와 그 의미를 함께 정리합니다.</p>
+          <span class="card-foot"><span>뉴스 노트 보기</span><span class="arrow" aria-hidden="true">→</span></span>
+        </a>
+        <a class="card" href="./companies/" aria-label="기업 분석 페이지로 이동">
+          <span class="icon" aria-hidden="true">◫</span><span class="number">02 / COMPANIES</span>
+          <h3>기업 분석</h3><p>기업의 사업 모델과 경쟁력, 실적과 리스크를 살펴보고 분석 내용을 HTML 리포트로 쌓아갑니다.</p>
+          <span class="card-foot"><span>기업 분석 보기</span><span class="arrow" aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      <p class="note">각 주제의 노트는 공부한 내용을 정리하며 계속 추가합니다.</p>
+    </section>
+    <section class="about">
+      <h2>ABOUT THIS ARCHIVE</h2>
+      <p>경제와 기업을 꾸준히 공부하며 생각의 과정을 기록합니다. 공개 자료와 출처를 바탕으로 정리하고, 새로운 정보와 관점에 따라 내용을 업데이트합니다. 이곳의 글은 개인 학습을 위한 기록입니다.</p>
+    </section>
+  </main>
+  <footer class="wrap"><span>ECONOMY STUDY · 개인 학습 아카이브</span><span>배우고, 기록하고, 다시 살펴보기</span></footer>
+</body>
+</html>
